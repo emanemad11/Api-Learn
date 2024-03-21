@@ -16,8 +16,6 @@ class SettingController extends Controller
     public function __invoke(Request $request)
     {
         $settings = Setting::find(2);
-        // return new SettingResource($settings);
-        // $settings = Setting::get();
         // return SettingResource::collection($settings); // collection of data not one reacord
         if ($settings) {
             return ApiResponse::sendResponse(200, 'Settings Retrieved Successfully', new SettingResource($settings));

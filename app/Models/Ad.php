@@ -16,12 +16,7 @@ class Ad extends Model
     /**
      * Get the options for generating the slug.
      */
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug');
-    }
+
 
     /**
      * Get the route key for the model.
@@ -80,9 +75,7 @@ class Ad extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'status' => AdStatus::class,
-    ];
+
 
     /**
      * fields ordering in filteration
@@ -118,10 +111,7 @@ class Ad extends Model
 
 
     ##--------------------------------- SCOPES
-    public function scopeApproved($query)
-    {
-        $query->where('status', AdStatus::APPROVED);
-    }
+
 
     public function scopeUserAds($query)
     {
